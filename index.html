@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de Caixas Unitárias e Pallets</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <img src="img/logo.png" alt="Logo" class="logo"> 
+        <h1>Calculadora de Caixas Unitárias e Pallets</h1>
+
+        <label>Tipo de Cálculo:</label>
+        <div class="tipo-calculo">
+            <label class="radio-option">
+                <input type="radio" name="tipoCalculo" value="unitaria" checked onchange="calcularCaixas()"> 
+                Caixa 
+            </label>
+            <label class="radio-option">
+                <input type="radio" name="tipoCalculo" value="pallet" onchange="calcularCaixas()"> 
+                Pallet
+            </label>
+        </div>
+
+        <label for="produto">Escolha uma Família:</label>
+        <select id="produto" onchange="atualizarValor()">
+            <option value="" disabled selected>Selecione uma Família</option>
+            <option value="1,5L">1,5L</option>
+            <option value="Água 12">Água 12</option>
+            <option value="Água Galão">Água Galão</option>
+            <option value="Bombona">Bombona</option>
+            <option value="Caixa 24">Caixa 24</option>
+            <option value="Caixa 36">Caixa 36</option>
+            <option value="Concentrado">Concentrado</option>
+            <option value="Energetico 2L">Energetico 2L</option>
+            <option value="Energetico Lata">Energetico Lata</option>
+            <option value="Ginseng">Ginseng</option>
+            <option value="Pet 250">Pet 250</option>
+        </select>
+
+        <h3 id="valor-unitario"></h3>
+
+        <label for="caixas-fisicas">Quantidade de Caixa Física:</label>
+        <input type="number" id="caixas-fisicas" placeholder="Digite o número de caixa física" oninput="calcularCaixas()">
+        
+        <h2 id="resultado"></h2>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
